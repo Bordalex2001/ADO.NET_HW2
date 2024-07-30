@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ADO.NET_HW2"
         mc:Ignorable="d"
-        Title="ConnectionString" Height="225" Width="385" ResizeMode="NoResize">
+        Title="Connection String" Height="225" Width="385" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid Margin="6">
             <Grid.RowDefinitions>
@@ -14,8 +14,8 @@
                 <RowDefinition Height="Auto"></RowDefinition>
                 <RowDefinition Height="Auto"></RowDefinition>
             </Grid.RowDefinitions>
-            <Label Grid.Row="0" Content="Уведіть рядок підключення до БД:" Padding="3"/>
-            <TextBox x:Name="connectionString" Grid.Row="1" TextWrapping="Wrap" Margin="3"/>
+            <!--<Label Grid.Row="0" Content="Уведіть рядок підключення до БД:" Padding="3"/>-->
+            <!--<TextBox x:Name="connectionStringTxtBox" Grid.Row="1" TextWrapping="Wrap" Margin="3" IsReadOnly="True"/>-->
             <StackPanel Grid.Row="2" HorizontalAlignment="Left" Orientation="Horizontal" Margin="3,3,0,3">
                 <Button x:Name="ConnectBtn" Content="Підключити" Padding="2, 0" Width="105" Height="30" Click="ConnectBtn_Click"/>
                 <Button x:Name="DisconnectBtn" Content="Відключити" Padding="2, 0" Margin="10,0,0,0" Width="105" Height="30" Click="DisconnectBtn_Click"/>

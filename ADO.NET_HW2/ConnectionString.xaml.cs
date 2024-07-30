@@ -21,22 +21,29 @@ namespace ADO.NET_HW2
     /// </summary>
     public partial class ConnectionString : Window
     {
-        public static SqlConnection connection;
+        //public static SqlConnection connection;
+        private IDbProvider dbProvider;
 
         public ConnectionString()
         {
             InitializeComponent();
+            //connectionStringTxtBox.Text = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=FruitsAndVegetablesDB;Integrated Security=True;";
+            dbProvider = DbProviderFactory.CreateProvider();
         }
 
-        private void ConnectBtn_Click(object sender, RoutedEventArgs e)
+        private async void ConnectBtn_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                connection = new SqlConnection(connectionString.Text);
-                connection.Open();
+                //connection = new SqlConnection(connectionString.Text);
+                //connection.Open();
+                //string providerType = "SQL";
+                //string connectionString = connectionStringTxtBox.Text;
+                //dbProvider = DbProviderFactory.CreateProvider(providerType, connectionString);
+                await dbProvider.ConnectAsync();
                 statusLbl.Content = "З'єднання з БД відбулося успішно.";
                 statusLbl.Foreground = new SolidColorBrush(Color.FromRgb(0, 0, 0));
-                MainWindow mainWindow = new MainWindow();
+                MainWindow mainWindow = new MainWindow(dbProvider);
                 mainWindow.Show();
             }
             catch (Exception ex)
@@ -50,12 +57,13 @@ namespace ADO.NET_HW2
         {
             try
             {
-                if (connection != null && connection.State == ConnectionState.Open)
-                {
-                    connection.Close();
-                    statusLbl.Content = "Роз'єдання відбулося успішно.";
-                    statusLbl.Foreground = new SolidColorBrush(Color.FromRgb(0, 0, 0));
-                }
+                //if (dbProvider != null)
+                //{
+                    //connection.Close();
+                dbProvider.Disconnect();
+                statusLbl.Content = "Роз'єдання відбулося успішно.";
+                statusLbl.Foreground = new SolidColorBrush(Color.FromRgb(0, 0, 0));
+                //}
             }
             catch (Exception ex)
             {
