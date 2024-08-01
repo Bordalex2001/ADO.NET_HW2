@@ -58,7 +58,6 @@ namespace ADO.NET_HW2
                 if (valuesById.Rows.Count > 0)
                 { 
                     nameTxtBox.Text = valuesById.Rows[0]["Name"].ToString();
-                    typeComboBox.DisplayMemberPath = "Type";
                     typeComboBox.SelectedValue = valuesById.Rows[0]["Type"];
                     colorTxtBox.Text = valuesById.Rows[0]["Color"].ToString();
                     caloricContentTxtBox.Text = valuesById.Rows[0]["CaloricContent"].ToString();

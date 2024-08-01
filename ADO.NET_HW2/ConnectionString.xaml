@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ADO.NET_HW2"
         mc:Ignorable="d"
-        Title="Connection String" Height="225" Width="385" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="Connection String" Height="225" Width="385" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid Margin="6">
             <Grid.RowDefinitions>

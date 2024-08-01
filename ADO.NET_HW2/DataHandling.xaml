@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ADO.NET_HW2"
         mc:Ignorable="d"
-        Title="Data Handling" Height="265" Width="265" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
+        Title="Data Handling" Height="265" Width="265" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
     <Grid>
         <Grid Margin="6">
             <Grid.ColumnDefinitions>
